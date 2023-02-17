@@ -31,11 +31,10 @@ def main(page):
 
 
     for i in range(len(details)):
-      house_Details.append({'titre':titres[i].text,'Pieces':details[i].contents[1].text,'salles_de_bains':details[i].contents[3].text,'surface':details[i].contents[5].text,'local':locations[i].text,'vendeur':agences[i].text,'prix':prix[i].text})
+      house_Details.append({'titre':titres[i].text.strip(),'Pieces':details[i].contents[1].text.strip(),'salles_de_bains':details[i].contents[3].text.strip(),'surface':details[i].contents[5].text.strip(),'local':locations[i].text.strip(),'vendeur':agences[i].text.strip(),'prix':prix[i].text.strip()})
 
   df = pd.DataFrame(house_Details)
   df.to_excel("house_list.xlsx")
-
 
 
 
